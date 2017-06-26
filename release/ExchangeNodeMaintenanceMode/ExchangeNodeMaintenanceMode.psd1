@@ -102,13 +102,13 @@ PrivateData = @{
         Tags = 'Exchange','ExchangeServer','ExchangeCluster','Maintenance'
 
         # A URL to the license for this module.
-        LicenseUri = 'https://github.com/jhochwald/ExchangeNodeMaintenanceMode/blob/master/license.md'
+        LicenseUri = 'https://github.com/jhochwald/ExchangeNodeMaintenanceMode/blob/master/License.md'
 
         # A URL to the main website for this project.
         ProjectUri = 'https://github.com/jhochwald/ExchangeNodeMaintenanceMode'
 
         # A URL to an icon representing this module.
-        IconUri = 'https://github.com/jhochwald/ExchangeNodeMaintenanceMode/blob/master/src/other/powershell-project.png'
+        IconUri = 'https://github.com/jhochwald/ExchangeNodeMaintenanceMode/raw/master/src/other/powershell-project.png'
 
         # ReleaseNotes of this module
         ReleaseNotes = 'Internal Test Build'

@@ -1,6 +1,6 @@
----
+﻿---
 Module Name: ExchangeNodeMaintenanceMode
-Module Guid: 1293bb34-f68a-46cb-ad98-11ab9dff2f07
+Module Guid: 1293bb34-f68a-46cb-ad98-11ab9dff2f07 00000000-0000-0000-0000-000000000000
 Download Help Link: https://github.com/jhochwald/ExchangeNodeMaintenanceMode/release/ExchangeNodeMaintenanceMode/docs/ExchangeNodeMaintenanceMode.md
 Help Version: 1.0.0.11
 Locale: en-US

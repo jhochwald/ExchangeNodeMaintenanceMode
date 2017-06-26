@@ -16,6 +16,9 @@ psgalleryapi.txt
 *~
 *.pfx
 
+# Our CI Build Wrapper is nothing we need to publish ;-)
+BuildWrapper.ps1
+
 # Temp Directory
 temp/
 temp/*
