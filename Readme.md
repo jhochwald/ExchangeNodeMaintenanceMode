@@ -31,7 +31,7 @@ and import the module to your session to test, but not install this module.
 
 ## Latest Version
 
-1.0.0.10 - Initial Release with the new Build Services
+1.0.0.11 - GitHub Repository Moved
 
 ## Contribute
 
