@@ -19,7 +19,7 @@ if ((Get-Variable 'BuildEnv' -ErrorAction:SilentlyContinue) -eq $null) {
         ModuleVersion = '1.0.0.10'
         ModuleWebsite = 'https://github.com/jhochwald/ExchangeNodeMaintenanceMode'
         ModuleCopyright = "(c) $((get-date).Year.ToString()) Enabling Technology. All rights reserved."
-        ModuleLicenseURI = 'https://github.com/jhochwald/ExchangeNodeMaintenanceMode/blob/master/LICENSE.md'
+        ModuleLicenseURI = 'https://github.com/jhochwald/ExchangeNodeMaintenanceMode/blob/master/license.md'
         ModuleTags = 'Exchange,ExchangeServer,ExchangeCluster,Maintenance' -split ','
         ModuleAuthor = 'Joerg Hochwald'
         ModuleDescription = 'Exchange Cluster Node Maintenance Mode Utilities'
