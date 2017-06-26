@@ -16,6 +16,10 @@ psgalleryapi.txt
 *~
 *.pfx
 
+# Temp Directory
+temp/
+temp/*
+
 # Sapien Stuff
 *.TempPoint.*
 *.Export.*
