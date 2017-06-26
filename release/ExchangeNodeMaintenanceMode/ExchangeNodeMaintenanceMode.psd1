@@ -111,7 +111,7 @@ PrivateData = @{
         IconUri = 'https://github.com/jhochwald/ExchangeNodeMaintenanceMode/raw/master/src/other/powershell-project.png'
 
         # ReleaseNotes of this module
-        ReleaseNotes = 'Internal Test Build'
+        ReleaseNotes = 'Transfer the GitHub Repository, Update all Files'
 
         # External dependent modules of this module
         # ExternalModuleDependencies = ''
