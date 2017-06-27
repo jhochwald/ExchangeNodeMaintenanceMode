@@ -1,6 +1,6 @@
 # Contributing to ExchangeNodeMaintenanceMode
 
-Project Site: [https://github.com/jhochwald/ExchangeNodeMaintenanceMode](https://github.com/jhochwald/ExchangeNodeMaintenanceMode)
+Project Site: [https://github.com/jhochwald/PowerShell-collection](https://github.com/jhochwald/PowerShell-collection)
 
 There are some important things to be aware of if you plan on contributing to this project.
 

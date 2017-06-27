@@ -1,7 +1,7 @@
 # ExchangeNodeMaintenanceMode
 Exchange Cluster Node Maintenance Mode Utilities
 
-Project Site: [https://github.com/jhochwald/ExchangeNodeMaintenanceMode](https://github.com/jhochwald/ExchangeNodeMaintenanceMode)
+Project Site: [https://github.com/jhochwald/PowerShell-collection](https://github.com/jhochwald/PowerShell-collection)
 
 ## What is ExchangeNodeMaintenanceMode?
 Exchange Cluster Node Maintenance Mode Utilities
@@ -25,14 +25,14 @@ Install-Module -Name ExchangeNodeMaintenanceMode -Scope CurrentUser
 ```
 
 ## Contributing
-[https://github.com/jhochwald/ExchangeNodeMaintenanceMode/blob/master/docs/Contributing.md](https://github.com/jhochwald/ExchangeNodeMaintenanceMode/blob/master/docs/Contributing.md)
+[https://github.com/jhochwald/PowerShell-collection/docs/Contributing.md](https://github.com/jhochwald/PowerShell-collection/docs/Contributing.md)
 
 ## Release Notes
-[https://github.com/jhochwald/ExchangeNodeMaintenanceMode/blob/master/docs/ReleaseNotes.md](https://github.com/jhochwald/ExchangeNodeMaintenanceMode/blob/master/docs/ReleaseNotes.md)
+[https://github.com/jhochwald/PowerShell-collection/docs/ReleaseNotes.md](https://github.com/jhochwald/PowerShell-collection/docs/ReleaseNotes.md)
 
 ## Change Log
-[https://github.com/jhochwald/ExchangeNodeMaintenanceMode/blob/master/docs/ChangeLog.md](https://github.com/jhochwald/ExchangeNodeMaintenanceMode/blob/master/docs/ChangeLog.md)
+[https://github.com/jhochwald/PowerShell-collection/docs/ChangeLog.md](https://github.com/jhochwald/PowerShell-collection/docs/ChangeLog.md)
 
 ## Acknowledgements
-[https://github.com/jhochwald/ExchangeNodeMaintenanceMode/blob/master/docs/Acknowledgements.md](https://github.com/jhochwald/ExchangeNodeMaintenanceMode/blob/master/docs/Acknowledgements.md)
+[https://github.com/jhochwald/PowerShell-collection/docs/Acknowledgements.md](https://github.com/jhochwald/PowerShell-collection/docs/Acknowledgements.md)
 
