@@ -55,28 +55,54 @@
 
 			PS > Invoke-ApplyExchangeCumulativeUpdate -Source '\\SERVER\Share\'
 
-			Microsoft Exchange Server 2016 Cumulative Update 6 Unattended Setup
-			Copying Files...
-			File copy complete. Setup will now collect additional information needed for installation.
+			Performing Microsoft Exchange Server Prerequisite Check
+
+			Configuring Prerequisites                                                                         COMPLETED
+			Prerequisite Analysis                                                                             COMPLETED
+
+			Configuring Microsoft Exchange Server
+
+			Preparing Setup                                                                                   COMPLETED
+			Stopping Services                                                                                 COMPLETED
+			Language Files                                                                                    COMPLETED
+			Removing Exchange Files                                                                           COMPLETED
+			Preparing Files                                                                                   COMPLETED
+			Copying Exchange Files                                                                            COMPLETED
+			Language Files                                                                                    COMPLETED
+			Restoring Services                                                                                COMPLETED
+			Language Configuration                                                                            COMPLETED
+			Exchange Management Tools                                                                         COMPLETED
+			Mailbox role: Transport service                                                                   COMPLETED
+			Mailbox role: Client Access service                                                               COMPLETED
+			Mailbox role: Unified Messaging service                                                           COMPLETED
+			Mailbox role: Mailbox service                                                                     COMPLETED
+			Mailbox role: Front End Transport service                                                         COMPLETED
+			Mailbox role: Client Access Front End service                                                     COMPLETED
+			Finalizing Setup                                                                                  COMPLETED
 	
 			.EXAMPLE
 			# Install the the and the updates the default UM Languages from a given location
-			# The en-US hint is normal. You can NOT remove this.
-
 			PS > Invoke-ApplyExchangeCumulativeUpdate -Source '\\SERVER\Share\' -UMLangHandling -UMLangSource '\\SERVER\Share\UM-Updates\'
 
-			Copying Files...
-			File copy complete. Setup will now collect additional information needed for installation.
-
-			UM Language Pack for de-DE
-			UM Language Pack for en-GB
-			UM Language Pack for en-US
-			The US English (en-US) UM language pack can't be uninstalled. It's required on all Mailbox servers.
-	
 			.EXAMPLE
 			# Install the the and the updates the given UM Languages
 			PS > Invoke-ApplyExchangeCumulativeUpdate -UMLangHandling -UMLanguages 'es-MX,es-ES'
 
+			Microsoft Exchange Server 2016 Cumulative Update 6 Unattended Setup
+
+			UM Language Pack for es-MX
+			UM Language Pack for es-ES
+
+			Performing Microsoft Exchange Server Prerequisite Check
+
+			Prerequisite Analysis                                                                             COMPLETED
+
+			Configuring Microsoft Exchange Server
+
+			UM language pack for (es-MX)                                                                      COMPLETED
+			UM language pack for (es-ES)                                                                      COMPLETED
+
+			The Exchange Server setup operation completed successfully.
 	
 			.NOTES
 			TODO: Error handling. At the moment it is just a fire an forget thing!
@@ -108,6 +134,8 @@
 			Test-ExchangeNodeMaintenanceMode
 	#>
 	
+	[CmdletBinding(ConfirmImpact = 'Medium',
+	SupportsShouldProcess = $true)]
 	param
 	(
 		[Parameter(ValueFromPipeline = $true,
@@ -135,19 +163,56 @@
 				ValueFromPipelineByPropertyName = $true,
 		Position = 5)]
 		[string]
-		$UMLanguages = 'de-DE,en-GB,en-US'
+		$UMLanguages = 'de-DE,en-GB'
 	)
 	
 	BEGIN
 	{
+
+		# Are we admin and elevated?
+		if (Get-Command Get-ExchangeAdminExecution -ErrorAction SilentlyContinue) 
+		{
+			try 
+			{
+				Get-ExchangeAdminExecution
+			}
+			catch 
+			{
+				break
+			}
+		}
+		else 
+		{
+			Write-Warning -Message 'Unable to check if this is an elevated Session!'
+			break
+		}
+
+		# Check the Exeution Policy
+		if (Get-Command Get-ExchangeExecutionPolicy -ErrorAction SilentlyContinue) 
+		{
+			try 
+			{
+				Get-ExchangeExecutionPolicy
+			}
+			catch 
+			{
+				break
+			}
+		}
+		else 
+		{
+			Write-Warning -Message 'Unable to check your PowerShell Execution Policy. Please do it by yourself!' -ErrorAction Stop
+			break
+		}
+
 		# Check if the given Directory conains the setup
-		
 		if ($UMLangHandling)
 		{
 			# Check if the given directory exists
 			If (-not (Test-Path -Path $UMLangSource -ErrorAction Stop))
 			{
 				Write-Error -Message "The given Directory ($UMLangSource) does NOT exist!" -ErrorAction Stop
+				break
 			}
 		}
 		
@@ -157,15 +222,24 @@
 			Push-Location -Path $Source
 			
 			# Start the Setup
-			Write-Verbose -Message 'Prepare AD Schema'
-			.\Setup.exe /PrepareSchema /IAcceptExchangeServerLicenseTerms
+			if ($pscmdlet.ShouldProcess('AD Schema', 'Prepare'))
+			{
+				Write-Verbose -Message 'Prepare AD Schema'
+				.\Setup.exe /PrepareSchema /IAcceptExchangeServerLicenseTerms
+			}
 
-			Write-Verbose -Message 'Prepare AD'
-			.\Setup.exe /PrepareAD /IAcceptExchangeServerLicenseTerms
+			if ($pscmdlet.ShouldProcess('Active Directory', 'Prepare'))
+			{
+				Write-Verbose -Message 'Prepare AD'
+				.\Setup.exe /PrepareAD /IAcceptExchangeServerLicenseTerms
+			}
 
-			Write-Verbose -Message 'Prepare AD Domain'
-			.\Setup.exe /PrepareDomain /IAcceptExchangeServerLicenseTerms
-			
+			if ($pscmdlet.ShouldProcess('Active Directory Domain', 'Prepare'))
+			{
+				Write-Verbose -Message 'Prepare AD Domain'
+				.\Setup.exe /PrepareDomain /IAcceptExchangeServerLicenseTerms
+			}
+
 			# Return
 			Pop-Location
 		}
@@ -180,9 +254,12 @@
 			Push-Location -Path $Source
 			
 			# Start the Setup
-			Write-Verbose -Message 'Remove UM Language Pack'
-			.\Setup.exe /RemoveUMLanguagePack:$UMLanguages
-			
+			if ($pscmdlet.ShouldProcess('UM Language Pack(s)', 'Remove'))
+			{
+				Write-Verbose -Message 'Remove UM Language Pack'
+				.\Setup.exe /RemoveUMLanguagePack:$UMLanguages
+			}
+
 			# Return
 			Pop-Location
 		}
@@ -192,8 +269,12 @@
 		Push-Location -Path $Source
 			
 		# Start the Setup
-		Write-Verbose -Message 'Start the Update: Now is the perfect time to get yourself a coffee...'
-		.\Setup.exe /m:upgrade /IAcceptExchangeServerLicenseTerms
+		if ($pscmdlet.ShouldProcess('Exchange Installation', 'upgrade'))
+		{
+			Write-Verbose -Message 'Start the Update: Now is the perfect time to get yourself a coffee...'
+			.\Setup.exe /m:upgrade /IAcceptExchangeServerLicenseTerms
+		}
+		
 			
 		# Return
 		Pop-Location
@@ -205,9 +286,14 @@
 			Push-Location -Path $Source
 			
 			# Start the Setup
-			Write-Verbose -Message 'Ok, now we update the UM language(s).'
-			.\Setup.exe /AddUMLanguagePack:$UMLanguages /s:$UMLangSource /IAcceptExchangeServerLicenseTerms
-			
+			if ($pscmdlet.ShouldProcess('UM language(s)', "Installation of $UMLanguages from $UMLangSource"))
+			{
+				Write-Verbose -Message 'Ok, now we update the UM language(s).'
+				#.\Setup.exe /AddUMLanguagePack:$UMLanguages /s:$UMLangSource /IAcceptExchangeServerLicenseTerms
+				Write-Warning -Message 'The UM language pack installation is delayed! In most cases a reboot if needed before installing these.'
+				Write-Output -InputObject "Please reboot an then execute this command: .\Setup.exe /AddUMLanguagePack:$UMLanguages /s:$UMLangSource /IAcceptExchangeServerLicenseTerms"
+			}
+
 			# Return
 			Pop-Location
 		}

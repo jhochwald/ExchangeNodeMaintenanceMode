@@ -37,3 +37,18 @@ Project Site: [https://github.com/jhochwald/ExchangeNodeMaintenanceMode](https:/
 
 ## Version 1.0.0.12
 - Internal Build
+
+## Version 1.0.0.13
+- Internal Build
+
+## Version 1.0.0.14
+- Internal Build
+
+## Version 1.0.0.15
+- Update the Help of the Invoke-ApplyExchangeCumulativeUpdate command
+- Extented: Invoke-ApplyExchangeCumulativeUpdate - SupportsShouldProcess and ConfirmImpact added
+- Update the Docs (MD)
+- Update (tweak) the build process.
+- UMLangHandling execution is removed, mostly a reboot is needed.
+- ADD: Get-ExchangeExecutionPolicy - Just a neat wrapper for Get-ExecutionPolicy
+- ADD: Get-ExchangeAdminExecution - Just a neat function to check if we are elevated
