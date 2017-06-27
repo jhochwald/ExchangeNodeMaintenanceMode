@@ -12,7 +12,7 @@
 RootModule = 'ExchangeNodeMaintenanceMode.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0.0.12'
+ModuleVersion = '1.0.0.14'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()

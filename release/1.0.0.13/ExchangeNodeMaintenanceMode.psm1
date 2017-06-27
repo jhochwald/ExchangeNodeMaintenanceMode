@@ -177,7 +177,7 @@ function Invoke-ApplyExchangeCumulativeUpdate
 	<#
     .EXTERNALHELP ExchangeNodeMaintenanceMode-help.xml
     .LINK
-        https://github.com/jhochwald/ExchangeNodeMaintenanceMode/tree/master/release/1.0.0.14/docs/Functions/Invoke-ApplyExchangeCumulativeUpdate.md
+        https://github.com/jhochwald/ExchangeNodeMaintenanceMode/tree/master/release/1.0.0.13/docs/Functions/Invoke-ApplyExchangeCumulativeUpdate.md
     #>
 	
 	[CmdletBinding()]
@@ -289,7 +289,7 @@ function Invoke-Exchange2016Workaround
 	<#
     .EXTERNALHELP ExchangeNodeMaintenanceMode-help.xml
     .LINK
-        https://github.com/jhochwald/ExchangeNodeMaintenanceMode/tree/master/release/1.0.0.14/docs/Functions/Invoke-Exchange2016Workaround.md
+        https://github.com/jhochwald/ExchangeNodeMaintenanceMode/tree/master/release/1.0.0.13/docs/Functions/Invoke-Exchange2016Workaround.md
     #>
 	
 	$paramGetCommand = @{
@@ -325,7 +325,7 @@ function Set-ExchangeNodeMaintenanceModeOff
 	<#
     .EXTERNALHELP ExchangeNodeMaintenanceMode-help.xml
     .LINK
-        https://github.com/jhochwald/ExchangeNodeMaintenanceMode/tree/master/release/1.0.0.14/docs/Functions/Set-ExchangeNodeMaintenanceModeOff.md
+        https://github.com/jhochwald/ExchangeNodeMaintenanceMode/tree/master/release/1.0.0.13/docs/Functions/Set-ExchangeNodeMaintenanceModeOff.md
     #>
 	
 	[OutputType([bool])]
@@ -392,7 +392,7 @@ function Set-ExchangeNodeMaintenanceModeOn
 	<#
     .EXTERNALHELP ExchangeNodeMaintenanceMode-help.xml
     .LINK
-        https://github.com/jhochwald/ExchangeNodeMaintenanceMode/tree/master/release/1.0.0.14/docs/Functions/Set-ExchangeNodeMaintenanceModeOn.md
+        https://github.com/jhochwald/ExchangeNodeMaintenanceMode/tree/master/release/1.0.0.13/docs/Functions/Set-ExchangeNodeMaintenanceModeOn.md
     #>
 	
 	param
@@ -489,7 +489,7 @@ function Test-ExchangeNodeMaintenanceMode
 	<#
     .EXTERNALHELP ExchangeNodeMaintenanceMode-help.xml
     .LINK
-        https://github.com/jhochwald/ExchangeNodeMaintenanceMode/tree/master/release/1.0.0.14/docs/Functions/Test-ExchangeNodeMaintenanceMode.md
+        https://github.com/jhochwald/ExchangeNodeMaintenanceMode/tree/master/release/1.0.0.13/docs/Functions/Test-ExchangeNodeMaintenanceMode.md
     #>
 	
 	[OutputType([bool])]
