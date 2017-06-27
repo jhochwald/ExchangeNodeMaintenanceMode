@@ -1,6 +1,6 @@
 # ExchangeNodeMaintenanceMode Acknowledgements
 
-Project Site: [https://github.com/jhochwald/PowerShell-collection](https://github.com/jhochwald/PowerShell-collection)
+Project Site: [https://github.com/jhochwald/PowerShell-collectiona](https://github.com/jhochwald/PowerShell-collectiona)
 
 This project owes some acknowlegement to other projects. Here are some other authors or projects which have made this project possible. If you believe you or a project should be included in this list please let us know.
 
