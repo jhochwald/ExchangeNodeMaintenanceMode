@@ -30,9 +30,19 @@ and import the module to your session to test, but not install this module.
 
 ## Features
 
+- Get-ExchangeAdminExecution- Get-ExchangeExecutionPolicy- Invoke-ApplyExchangeCumulativeUpdate- Invoke-Exchange2016Workaround- Set-ExchangeNodeMaintenanceModeOff- Set-ExchangeNodeMaintenanceModeOn- Test-ExchangeNodeMaintenanceMode
+
 ## Latest Version
 
-1.0.0.11 - GitHub Repository Moved
+### Version 1.0.0.15
+
+- Update the Help of the Invoke-ApplyExchangeCumulativeUpdate command
+- Extented: Invoke-ApplyExchangeCumulativeUpdate - SupportsShouldProcess and ConfirmImpact added
+- Update the Docs (MD)
+- Update (tweak) the build process.
+- UMLangHandling execution is removed, mostly a reboot is needed.
+- ADD: Get-ExchangeExecutionPolicy - Just a neat wrapper for Get-ExecutionPolicy
+- ADD: Get-ExchangeAdminExecution - Just a neat function to check if we are elevated
 
 ## Contribute
 
