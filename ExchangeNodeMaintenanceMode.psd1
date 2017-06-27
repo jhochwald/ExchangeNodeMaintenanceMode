@@ -12,7 +12,7 @@
 RootModule = 'ExchangeNodeMaintenanceMode.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0.0.11'
+ModuleVersion = '1.0.0.12'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -107,7 +107,7 @@ PrivateData = @{
         IconUri = 'https://github.com/jhochwald/ExchangeNodeMaintenanceMode/raw/master/src/other/powershell-project.png'
 
         # ReleaseNotes of this module
-        ReleaseNotes = 'Transfer the GitHub Repository, Update all Files'
+        ReleaseNotes = 'Internal Test Build'
 
         # External dependent modules of this module
         # ExternalModuleDependencies = ''
