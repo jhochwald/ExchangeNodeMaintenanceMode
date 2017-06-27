@@ -8,7 +8,8 @@ Exchange Cluster Node Maintenance Mode Utilities
 
 ## Introduction
 
-Exchange Cluster Node Maintenance Mode Utilities
+Apply an Exchange Cumulative Update, with the optional AD and Schema updates, and additional UM language packs update.Please read the Release Notes from Microsoft carefully, some updates need an Active Directory schema and/or Active Directory and/or Active Directory domain updates.If this is the case, please use the "Prepare" Switch on ONE Node!
+Nevertheless, please keep in mind, that you do NOT need to run the command with this Switch more than once. However, even if, the Switch will not harm in any kind, it is just a waste of time, and the installation will take longer.
 
 ## Requirements
 
