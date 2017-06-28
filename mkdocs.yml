@@ -11,6 +11,7 @@ Pages:
   - Get-ExchangeExecutionPolicy: Functions\Get-ExchangeExecutionPolicy.md
   - Invoke-ApplyExchangeCumulativeUpdate: Functions\Invoke-ApplyExchangeCumulativeUpdate.md
   - Invoke-Exchange2016Workaround: Functions\Invoke-Exchange2016Workaround.md
+  - Restart-ExchangeClusterNode: Functions\Restart-ExchangeClusterNode.md
   - Set-ExchangeNodeMaintenanceModeOff: Functions\Set-ExchangeNodeMaintenanceModeOff.md
   - Set-ExchangeNodeMaintenanceModeOn: Functions\Set-ExchangeNodeMaintenanceModeOn.md
   - Test-ExchangeNodeMaintenanceMode: Functions\Test-ExchangeNodeMaintenanceMode.md

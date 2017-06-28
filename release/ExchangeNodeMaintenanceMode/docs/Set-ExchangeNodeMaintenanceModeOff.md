@@ -12,11 +12,11 @@ Return Exchange Node to normal operation
 ## SYNTAX
 
 ```
-Set-ExchangeNodeMaintenanceModeOff [[-ComputerName] <String>]
+Set-ExchangeNodeMaintenanceModeOff [[-ComputerName] <String>] [-WhatIf] [-Confirm]
 ```
 
 ## DESCRIPTION
-Return Exchange Node to normal operation
+Disable the Maintenance Mode on a given the Exchange Node.
 
 ## EXAMPLES
 
@@ -53,6 +53,37 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ## INPUTS
 
 ## OUTPUTS
@@ -60,6 +91,8 @@ Accept wildcard characters: False
 ### System.Boolean
 
 ## NOTES
+If you installed an update (or CU), you might need a reboot anyway.
+
 .
 LINK
 Invoke-Exchange2016Workaround

@@ -52,3 +52,10 @@ Project Site: [https://github.com/jhochwald/ExchangeNodeMaintenanceMode](https:/
 - UMLangHandling execution is removed, mostly a reboot is needed.
 - ADD: Get-ExchangeExecutionPolicy - Just a neat wrapper for Get-ExecutionPolicy
 - ADD: Get-ExchangeAdminExecution - Just a neat function to check if we are elevated
+
+## Version 1.0.0.16
+- NEW: Restart-ExchangeClusterNode - Wrapper to initiate a clean reboot
+- CHANGE: Invoke-ApplyExchangeCumulativeUpdate - Optimize
+- CHANGE: Set-ExchangeNodeMaintenanceModeOn - Add SupportsShouldProcess
+- CHANGE: Set-ExchangeNodeMaintenanceModeOff - Add SupportsShouldProcess
+
