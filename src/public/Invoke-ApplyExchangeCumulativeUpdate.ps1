@@ -170,11 +170,14 @@
 	{
 
 		# Are we admin and elevated?
-		if (Get-Command Get-ExchangeAdminExecution -ErrorAction SilentlyContinue) 
+		if (Get-Command -Name Get-ExchangeAdminExecution -ErrorAction SilentlyContinue) 
 		{
 			try 
 			{
-				Get-ExchangeAdminExecution
+				if ($pscmdlet.ShouldProcess('PowerShell Session', 'Check if execution is elevated'))
+				{
+					Get-ExchangeAdminExecution
+				}
 			}
 			catch 
 			{
@@ -188,11 +191,14 @@
 		}
 
 		# Check the Exeution Policy
-		if (Get-Command Get-ExchangeExecutionPolicy -ErrorAction SilentlyContinue) 
+		if (Get-Command -Name Get-ExchangeExecutionPolicy -ErrorAction SilentlyContinue) 
 		{
 			try 
 			{
-				Get-ExchangeExecutionPolicy
+				if ($pscmdlet.ShouldProcess('PowerShell Session', 'Check Execution Policy'))
+				{
+					Get-ExchangeExecutionPolicy
+				}
 			}
 			catch 
 			{

@@ -5,7 +5,7 @@
 			Return Exchange Node to normal operation
 	
 			.DESCRIPTION
-			Return Exchange Node to normal operation
+			Disable the Maintenance Mode on a given the Exchange Node.
 	
 			.PARAMETER ComputerName
 			Name of the Exchange Node, default is local system
@@ -23,6 +23,7 @@
 			$false
 
 			.NOTES
+			If you installed an update (or CU), you might need a reboot anyway.
 
 			. LINK
 			Invoke-Exchange2016Workaround
@@ -31,6 +32,8 @@
 			Invoke-ApplyExchangeCumulativeUpdate
 	#>
 	
+	[CmdletBinding(ConfirmImpact = 'Low',
+	SupportsShouldProcess = $true)]
 	[OutputType([bool])]
 	param
 	(
@@ -45,7 +48,41 @@
 	Begin
 	{
 		# Workaround for Exchange 2016 on Windows Server 2016
-		Invoke-Exchange2016Workaround
+		if ($pscmdlet.ShouldProcess("$ComputerName", 'Activate Maintenance'))
+		{
+			if (Get-Command -Name Invoke-Exchange2016Workaround -ErrorAction SilentlyContinue) 
+			{
+				try 
+				{
+					Invoke-Exchange2016Workaround
+				}
+				catch 
+				{
+					break
+				}
+			}
+		}
+
+		# Are we admin and elevated?
+		if (Get-Command -Name Get-ExchangeAdminExecution -ErrorAction SilentlyContinue) 
+		{
+			try 
+			{
+				if ($pscmdlet.ShouldProcess('PowerShell Session', 'Check if execution is elevated'))
+				{
+					Get-ExchangeAdminExecution
+				}
+			}
+			catch 
+			{
+				break
+			}
+		}
+		else 
+		{
+			Write-Warning -Message 'Unable to check if this is an elevated Session!'
+			break
+		}
 	}
 	
 	Process
@@ -59,7 +96,10 @@
 				State     = 'Active'
 				Requester = 'Maintenance'
 			}
-			$null = (Set-ServerComponentState @paramSetServerComponentState)
+			if ($pscmdlet.ShouldProcess("$ComputerName", 'Deactivate Maintenance'))
+			{
+				$null = (Set-ServerComponentState @paramSetServerComponentState)
+			}
 			
 			# Activate the Cluster Node
 			$paramResumeClusterNode = @{
@@ -67,7 +107,10 @@
 				ErrorAction   = 'Stop'
 				WarningAction = 'SilentlyContinue'
 			}
-			$null = (Resume-ClusterNode @paramResumeClusterNode)
+			if ($pscmdlet.ShouldProcess("$ComputerName", 'Resume Cluster Node'))
+			{
+				$null = (Resume-ClusterNode @paramResumeClusterNode)
+			}
 			
 			# Activate the Databases
 			$paramSetMailboxServer = @{
@@ -77,7 +120,10 @@
 				ErrorAction                              = 'Stop'
 				WarningAction                            = 'SilentlyContinue'
 			}
-			$null = (Set-MailboxServer @paramSetMailboxServer)
+			if ($pscmdlet.ShouldProcess("$ComputerName", 'Activate default MailboxServer operation'))
+			{
+				$null = (Set-MailboxServer @paramSetMailboxServer)
+			}
 		}
 		catch
 		{
