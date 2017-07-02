@@ -35,12 +35,10 @@ and import the module to your session to test, but not install this module.
 
 ## Latest Version
 
-### Version 1.0.0.16
+### Version 1.0.0.17
 
-- NEW: Restart-ExchangeClusterNode - Wrapper to initiate a clean reboot
-- CHANGE: Invoke-ApplyExchangeCumulativeUpdate - Optimize
-- CHANGE: Set-ExchangeNodeMaintenanceModeOn - Add SupportsShouldProcess
-- CHANGE: Set-ExchangeNodeMaintenanceModeOff - Add SupportsShouldProcess
+- CHANGE: PowerShell Gallery Icon
+- WORKAROUND: GUID Handler (To mitigate an ModuleBuild issue)
 
 ## Contribute
 

@@ -107,7 +107,7 @@ PrivateData = @{
         IconUri = 'https://github.com/jhochwald/ExchangeNodeMaintenanceMode/raw/master/src/other/powershell-project.png'
 
         # ReleaseNotes of this module
-        ReleaseNotes = 'Internal Test Build'
+        ReleaseNotes = 'WORKAROUND: GUID Handler (To mitigate an ModuleBuild issue)'
 
         # External dependent modules of this module
         # ExternalModuleDependencies = ''
