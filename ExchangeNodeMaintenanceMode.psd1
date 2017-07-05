@@ -12,7 +12,7 @@
 RootModule = 'ExchangeNodeMaintenanceMode.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0.0.18'
+ModuleVersion = '1.0.0.19'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -107,7 +107,7 @@ PrivateData = @{
         IconUri = 'https://github.com/jhochwald/ExchangeNodeMaintenanceMode/raw/master/src/other/powershell-project.png'
 
         # ReleaseNotes of this module
-        ReleaseNotes = 'TEST: New Build Wrapper (TeamCity)'
+        ReleaseNotes = 'TEST: Update some MobuleBuilder Core Files'
 
         # External dependent modules of this module
         # ExternalModuleDependencies = ''
