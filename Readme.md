@@ -35,10 +35,10 @@ and import the module to your session to test, but not install this module.
 
 ## Latest Version
 
-### Version 1.0.0.17
-
-- CHANGE: PowerShell Gallery Icon
-- WORKAROUND: GUID Handler (To mitigate an ModuleBuild issue)
+### Version 1.0.0.18
+- CHANGED: Change Date back to ISO (Internal)
+- CHANGED: Framework modules (ModuleBuild, platyPS) to latest stable version
+- CHANGED: Implement permanent Workaround from 1.0.0.16 and 1.0.0.17
 
 ## Contribute
 

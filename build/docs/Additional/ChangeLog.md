@@ -59,3 +59,11 @@ Project Site: [https://github.com/jhochwald/ExchangeNodeMaintenanceMode](https:/
 - CHANGE: Set-ExchangeNodeMaintenanceModeOn - Add SupportsShouldProcess
 - CHANGE: Set-ExchangeNodeMaintenanceModeOff - Add SupportsShouldProcess
 
+## Version 1.0.0.17
+- CHANGE: PowerShell Gallery Icon
+- WORKAROUND: GUID Handler (To mitigate an ModuleBuild issue)
+
+## Version 1.0.0.18
+- CHANGED: Change Date back to ISO (Internal)
+- CHANGED: Framework modules (ModuleBuild, platyPS) to latest stable version
+- CHANGED: Implement permanent Workaround from 1.0.0.16 and 1.0.0.17
