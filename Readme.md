@@ -1,5 +1,7 @@
 # ExchangeNodeMaintenanceMode
 
+i no longer run Exchange on Premises.
+
 Exchange Cluster Node Maintenance Mode Utilities
 
 ## Description
@@ -8,7 +10,10 @@ Exchange Cluster Node Maintenance Mode Utilities
 
 ## Introduction
 
-Apply an Exchange Cumulative Update, with the optional AD and Schema updates, and additional UM language packs update.Please read the Release Notes from Microsoft carefully, some updates need an Active Directory schema and/or Active Directory and/or Active Directory domain updates.If this is the case, please use the "Prepare" Switch on ONE Node!
+Apply an Exchange Cumulative Update, with the optional AD and Schema updates, and additional UM language packs update.
+
+Please read the Release Notes from Microsoft carefully, some updates need an Active Directory schema and/or Active Directory and/or Active Directory domain updates.
+If this is the case, please use the "Prepare" Switch on ONE Node!
 Nevertheless, please keep in mind, that you do NOT need to run the command with this Switch more than once. However, even if, the Switch will not harm in any kind, it is just a waste of time, and the installation will take longer.
 
 ## Requirements
@@ -30,7 +35,13 @@ and import the module to your session to test, but not install this module.
 
 ## Features
 
-- Get-ExchangeAdminExecution- Get-ExchangeExecutionPolicy- Invoke-ApplyExchangeCumulativeUpdate- Invoke-Exchange2016Workaround- Set-ExchangeNodeMaintenanceModeOff- Set-ExchangeNodeMaintenanceModeOn- Test-ExchangeNodeMaintenanceMode
+- Get-ExchangeAdminExecution
+- Get-ExchangeExecutionPolicy
+- Invoke-ApplyExchangeCumulativeUpdate
+- Invoke-Exchange2016Workaround
+- Set-ExchangeNodeMaintenanceModeOff
+- Set-ExchangeNodeMaintenanceModeOn
+- Test-ExchangeNodeMaintenanceMode
 - Restart-ExchangeClusterNode
 
 ## Latest Version
